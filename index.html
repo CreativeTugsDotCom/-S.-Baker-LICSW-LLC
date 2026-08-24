@@ -1,0 +1,996 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shera Baker-Edwards, LICSW | Psychotherapist in Providence, RI</title>
+    
+    <!-- Meta Descriptions for Local SEO -->
+    <meta name="description" content="Shera Baker-Edwards, LICSW - Experienced psychotherapist in Providence, Rhode Island providing thoughtful, direct, and empathetic therapy for adults.">
+    <meta name="keywords" content="Shera Baker-Edwards LICSW, S dot Baker LICSW, Psychotherapist Providence RI, Therapy Providence RI, Psychotherapy Rhode Island">
+
+    <!-- Fonts: DM Serif Display & Manrope -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Manrope:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        ink: '#18252B',        /* Primary */
+                        plum: '#493A4D',       /* Secondary */
+                        ivory: '#F5F1E9',      /* Main Background */
+                        copper: '#B66F52',     /* Accent */
+                        dusty: '#899DA5',      /* Secondary Accent */
+                        mist: '#E7E9E5',       /* Light Neutral */
+                    },
+                    fontFamily: {
+                        serif: ['"DM Serif Display"', 'serif'],
+                        sans: ['"Manrope"', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        /* Custom Custom Properties & Precision Styling */
+        :root {
+            --color-ink: #18252B;
+            --color-plum: #493A4D;
+            --color-ivory: #F5F1E9;
+            --color-copper: #B66F52;
+            --color-dusty: #899DA5;
+            --color-mist: #E7E9E5;
+        }
+
+        body {
+            background-color: var(--color-ivory);
+            color: var(--color-ink);
+            font-family: 'Manrope', sans-serif;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            overflow-x: hidden;
+        }
+
+        ::selection {
+            background-color: var(--color-copper);
+            color: #FFFFFF;
+        }
+
+        /* Micro-Interactions & Transitions */
+        .editorial-border {
+            border-color: rgba(24, 37, 43, 0.15);
+        }
+
+        .editorial-border-dark {
+            border-color: rgba(245, 241, 233, 0.2);
+        }
+
+        /* Hover Link Line Animation */
+        .copper-link {
+            position: relative;
+            display: inline-block;
+        }
+
+        .copper-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 1px;
+            bottom: -2px;
+            left: 0;
+            background-color: var(--color-copper);
+            transition: width 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .copper-link:hover::after {
+            width: 100%;
+        }
+
+        /* Image Reveal & Scale */
+        .img-zoom-box {
+            overflow: hidden;
+        }
+
+        .img-zoom-box img {
+            transition: transform 1.2s cubic-bezier(0.16, 1, 0.3, 1), filter 0.8s ease;
+        }
+
+        .img-zoom-box:hover img {
+            transform: scale(1.04);
+        }
+
+        /* Scroll Animations */
+        .reveal {
+            opacity: 0;
+            transform: translateY(24px);
+            transition: opacity 0.9s cubic-bezier(0.16, 1, 0.3, 1), transform 0.9s cubic-bezier(0.16, 1, 0.3, 1);
+            will-change: opacity, transform;
+        }
+
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .delay-1 { transition-delay: 100ms; }
+        .delay-2 { transition-delay: 200ms; }
+        .delay-3 { transition-delay: 300ms; }
+
+        /* Sticky Header Transitions */
+        #navbar {
+            transition: background-color 0.4s ease, border-color 0.4s ease, padding 0.4s ease;
+        }
+
+        #navbar.scrolled {
+            background-color: rgba(245, 241, 233, 0.96);
+            backdrop-filter: blur(8px);
+            padding-top: 1rem;
+            padding-bottom: 1rem;
+            border-bottom: 1px solid rgba(24, 37, 43, 0.12);
+        }
+
+        /* Mobile Menu Panel */
+        #mobile-menu {
+            transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+            transform: translateX(100%);
+        }
+
+        #mobile-menu.open {
+            transform: translateX(0);
+        }
+
+        /* Respect Reduced Motion */
+        @media (prefers-reduced-motion: reduce) {
+            .reveal {
+                opacity: 1 !important;
+                transform: none !important;
+                transition: none !important;
+            }
+            .img-zoom-box img {
+                transition: none !important;
+            }
+        }
+    </style>
+
+    <script>
+        const fallbackSVG = "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IxMDAlIj48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSIjRTdFOUU1Ii8+PHRleHQgeD0iNTAlIiB5PSI1MCUiIGRvbWluYW50LWJhc2VsaW5lPSJtaWRkbGUiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZvbnQtZmFtaWx5PSJzYW5zLXNlcmlmIiBmb250LXNpemU9IjE0cHgiIGZpbGw9IiMxODI1MkIiPkVkaXRvcmlhbCBJbWFnZTwvdGV4dD48L3N2Zz4=";
+        function handleImgError(img) {
+            img.onerror = null;
+            img.src = fallbackSVG;
+        }
+    </script>
+</head>
+<body class="font-sans antialiased text-ink bg-ivory selection:bg-copper selection:text-white">
+
+    <!-- Toast Notification Container for Image Saved Feedback -->
+    <div id="toast-container" class="fixed bottom-6 right-6 z-50 transform translate-y-20 opacity-0 transition-all duration-300 pointer-events-none">
+        <div class="bg-ink text-ivory px-5 py-3 shadow-2xl border border-copper flex items-center gap-3">
+            <svg class="w-5 h-5 text-copper" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+            <span id="toast-message" class="text-xs font-semibold tracking-wider uppercase">Image saved successfully!</span>
+        </div>
+    </div>
+
+    <!-- 1. HEADER -->
+    <header id="navbar" class="fixed top-0 left-0 w-full z-50 py-6 px-6 md:px-12 border-b border-ink/10 transition-all duration-300">
+        <div class="max-w-7xl mx-auto flex justify-between items-center">
+            
+            <!-- Branding -->
+            <a href="#" class="group flex flex-col">
+                <span class="font-serif text-lg md:text-xl font-normal tracking-wide uppercase group-hover:text-copper transition-colors">
+                    Shera Baker-Edwards<span class="text-xs font-sans tracking-normal ml-2 text-copper font-semibold">LICSW</span>
+                </span>
+                <span class="text-[10px] tracking-[0.22em] uppercase text-ink/60 mt-0.5">
+                    S Dot Baker LICSW, LLC
+                </span>
+            </a>
+
+            <!-- Desktop Navigation -->
+            <nav class="hidden md:flex items-center space-x-10 text-xs tracking-[0.18em] font-semibold uppercase">
+                <a href="#about" class="copper-link text-ink hover:text-copper transition-colors">About</a>
+                <a href="#support" class="copper-link text-ink hover:text-copper transition-colors">Support</a>
+                <a href="#approach" class="copper-link text-ink hover:text-copper transition-colors">Approach</a>
+                <a href="#contact" class="copper-link text-ink hover:text-copper transition-colors">Contact</a>
+            </nav>
+
+            <!-- CTA Button -->
+            <div class="hidden md:block">
+                <a href="#contact" class="inline-flex items-center gap-2 text-xs font-semibold tracking-[0.18em] uppercase border border-ink/30 px-5 py-3 hover:bg-ink hover:text-ivory hover:border-ink transition-all duration-300">
+                    <span>Start a Conversation</span>
+                    <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+                </a>
+            </div>
+
+            <!-- Mobile Hamburger Toggle -->
+            <button id="menu-btn" class="md:hidden p-2 text-ink focus:outline-none" aria-label="Open Navigation Menu">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 8h16M4 16h16"></path></svg>
+            </button>
+        </div>
+    </header>
+
+    <!-- Mobile Navigation Overlay -->
+    <div id="mobile-menu" class="fixed inset-0 bg-ivory z-50 flex flex-col justify-between p-8 md:hidden">
+        <div class="flex justify-between items-center border-b border-ink/10 pb-6">
+            <div>
+                <p class="font-serif text-lg uppercase">Shera Baker-Edwards</p>
+                <p class="text-[10px] tracking-widest uppercase text-ink/60">S Dot Baker LICSW, LLC</p>
+            </div>
+            <button id="close-btn" class="p-2 text-ink focus:outline-none" aria-label="Close Navigation Menu">
+                <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M6 18L18 6M6 6l12 12"></path></svg>
+            </button>
+        </div>
+
+        <nav class="flex flex-col space-y-6 my-auto font-serif text-3xl">
+            <a href="#about" class="mobile-link hover:text-copper transition-colors">01. About</a>
+            <a href="#support" class="mobile-link hover:text-copper transition-colors">02. Support</a>
+            <a href="#approach" class="mobile-link hover:text-copper transition-colors">03. Approach</a>
+            <a href="#contact" class="mobile-link hover:text-copper transition-colors">04. Contact</a>
+        </nav>
+
+        <div class="border-t border-ink/10 pt-6">
+            <a href="#contact" class="mobile-link block text-center bg-ink text-ivory py-4 text-xs font-semibold tracking-widest uppercase hover:bg-copper transition-colors">
+                Start a Conversation →
+            </a>
+        </div>
+    </div>
+
+
+    <!-- 2. HERO -->
+    <section id="hero" class="pt-32 lg:pt-40 pb-16 md:pb-24 px-6 md:px-12 border-b border-ink/10">
+        <div class="max-w-7xl mx-auto">
+            
+            <!-- Upper Label -->
+            <div class="reveal mb-8">
+                <span class="inline-block text-[11px] font-semibold tracking-[0.25em] uppercase text-copper border-b border-copper/30 pb-1">
+                    Psychotherapy • Providence, RI
+                </span>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
+                
+                <!-- Left Column: Typography & CTAs -->
+                <div class="lg:col-span-7 flex flex-col justify-between reveal delay-1">
+                    <h1 class="font-serif text-5xl sm:text-6xl md:text-7xl lg:text-8xl leading-[0.98] text-ink uppercase tracking-tight mb-8">
+                        Real life<br>
+                        is complex.<br>
+                        <span class="italic font-serif normal-case text-copper font-normal">Therapy can</span><br>
+                        help make<br>
+                        sense of it.
+                    </h1>
+
+                    <p class="text-base sm:text-lg md:text-xl text-ink/80 max-w-xl font-normal leading-relaxed mb-12 border-l-2 border-copper pl-6 py-1">
+                        Thoughtful psychotherapy for adults navigating anxiety, depression, grief, life transitions, stress, relationships, and the challenges that come with change.
+                    </p>
+
+                    <div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-5">
+                        <a href="#contact" class="inline-flex justify-center items-center gap-3 bg-ink text-ivory px-8 py-4 text-xs font-semibold tracking-[0.2em] uppercase hover:bg-copper transition-colors duration-300">
+                            <span>Start a Conversation</span>
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+                        </a>
+                        <a href="#support" class="inline-flex justify-center items-center gap-2 border border-ink/20 text-ink px-8 py-4 text-xs font-semibold tracking-[0.2em] uppercase hover:border-ink transition-colors duration-300">
+                            <span>Explore Support</span>
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path></svg>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Right Column: Editorial Visual -->
+                <div class="lg:col-span-5 reveal delay-2">
+                    <div class="relative">
+                        <!-- Vertical Label -->
+                        <div class="hidden sm:block absolute -left-8 bottom-12 transform -rotate-90 origin-bottom-left text-[10px] font-semibold tracking-[0.3em] uppercase text-ink/40 z-10">
+                            Shera Baker-Edwards • LICSW
+                        </div>
+
+                        <!-- Editorial Image Crop with Upload & Save -->
+                        <div 
+                            class="img-zoom-box aspect-[4/5] bg-mist border border-ink/10 relative shadow-2xl cursor-pointer group/img"
+                            onclick="document.getElementById('hero-img-input').click()"
+                            title="Click to add or change picture"
+                        >
+                            <img 
+                                id="hero-img"
+                                src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=1000&auto=format&fit=crop" 
+                                alt="Editorial portrait representing Shera Baker-Edwards, LICSW" 
+                                class="w-full h-full object-cover grayscale contrast-105 hover:grayscale-0"
+                                loading="eager"
+                                onerror="handleImgError(this)"
+                            >
+                            <div class="absolute top-3 right-3 bg-ink/85 backdrop-blur-sm text-ivory hover:bg-copper text-[10px] font-medium tracking-wider uppercase px-3 py-1.5 border border-ivory/20 transition-all shadow-md group-hover/img:scale-105 flex items-center gap-1.5">
+                                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 9a2 2 0 012-2h.93a2 2 0 001.664-.89l.812-1.22A2 2 0 0110.07 4h3.86a2 2 0 011.664.89l.812 1.22A2 2 0 0018.07 7H19a2 2 0 012 2v9a2 2 0 01-2 2H5a2 2 0 01-2-2V9z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 13a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
+                                <span>Change &amp; Save Image</span>
+                            </div>
+                            <input type="file" id="hero-img-input" accept="image/*" class="hidden" onchange="handleImageUpload(event, 'hero-img')">
+                        </div>
+
+                        <!-- Secondary Tag -->
+                        <div class="mt-4 flex justify-between items-center text-[11px] tracking-widest uppercase text-ink/60 border-t border-ink/10 pt-3">
+                            <span>Providence Practice</span>
+                            <span>Adult Psychotherapy</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+
+    <!-- 3. ABOUT SHERA -->
+    <section id="about" class="py-24 md:py-32 px-6 md:px-12 bg-ivory border-b border-ink/10">
+        <div class="max-w-7xl mx-auto">
+            
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+                
+                <!-- Left: Editorial Visual (Two-Box Grid) -->
+                <div class="lg:col-span-5 order-2 lg:order-1 reveal flex flex-col gap-6">
+                    
+                    <!-- First Box: Primary Portrait -->
+                    <div 
+                        class="img-zoom-box aspect-[4/3] sm:aspect-[3/4] bg-mist border border-ink/10 relative cursor-pointer group/img w-full"
+                        onclick="document.getElementById('about-img-input').click()"
+                        title="Click to add or change picture"
+                    >
+                        <img 
+                            id="about-img"
+                            src="https://images.unsplash.com/photo-1508214751196-bcfd4ca60f91?q=80&w=1000&auto=format&fit=crop" 
+                            alt="Thoughtful editorial portrait of therapist in warm light" 
+                            class="w-full h-full object-cover"
+                            loading="lazy"
+                            onerror="handleImgError(this)"
+                        >
+                        <div class="absolute top-3 right-3 bg-ink/85 backdrop-blur-sm text-ivory hover:bg-copper text-[10px] font-medium tracking-wider uppercase px-3 py-1.5 border border-ivory/20 transition-all shadow-md group-hover/img:scale-105 flex items-center gap-1.5">
+                            <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 9a2 2 0 012-2h.93a2 2 0 001.664-.89l.812-1.22A2 2 0 0110.07 4h3.86a2 2 0 011.664.89l.812 1.22A2 2 0 0018.07 7H19a2 2 0 012 2v9a2 2 0 01-2 2H5a2 2 0 01-2-2V9z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 13a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
+                            <span>Change &amp; Save Image</span>
+                        </div>
+                        <input type="file" id="about-img-input" accept="image/*" class="hidden" onchange="handleImageUpload(event, 'about-img')">
+                    </div>
+
+                    <!-- Second Box: Clasped Hands in Grey Knit Sweater (Empathetic Support Detail) -->
+                    <div 
+                        class="img-zoom-box aspect-[16/10] bg-mist border border-ink/10 relative cursor-pointer group/img w-full shadow-lg"
+                        onclick="document.getElementById('about-img-2-input').click()"
+                        title="Click to add or change picture"
+                    >
+                        <img 
+                            id="about-img-2"
+                            src="https://images.unsplash.com/photo-1544027993-37dbfe43562a?q=80&w=1000&auto=format&fit=crop" 
+                            alt="Close-up of clasped hands in cozy sweater representing supportive, empathetic care" 
+                            class="w-full h-full object-cover"
+                            loading="lazy"
+                            onerror="handleImgError(this)"
+                        >
+                        <div class="absolute bottom-3 left-3 bg-ink/85 backdrop-blur-sm text-ivory text-[9px] font-semibold tracking-[0.2em] uppercase px-3 py-1.5 border border-ivory/10">
+                            Safe &amp; Empathetic Space
+                        </div>
+                        <div class="absolute top-3 right-3 bg-ink/85 backdrop-blur-sm text-ivory hover:bg-copper text-[10px] font-medium tracking-wider uppercase px-3 py-1.5 border border-ivory/20 transition-all shadow-md group-hover/img:scale-105 flex items-center gap-1.5">
+                            <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 9a2 2 0 012-2h.93a2 2 0 001.664-.89l.812-1.22A2 2 0 0110.07 4h3.86a2 2 0 011.664.89l.812 1.22A2 2 0 0018.07 7H19a2 2 0 012 2v9a2 2 0 01-2 2H5a2 2 0 01-2-2V9z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 13a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
+                            <span>Change &amp; Save Image</span>
+                        </div>
+                        <input type="file" id="about-img-2-input" accept="image/*" class="hidden" onchange="handleImageUpload(event, 'about-img-2')">
+                    </div>
+
+                </div>
+
+                <!-- Right: Editorial Content -->
+                <div class="lg:col-span-7 order-1 lg:order-2 reveal delay-1">
+                    
+                    <span class="text-[11px] font-semibold tracking-[0.25em] uppercase text-copper block mb-4">
+                        The Person Behind the Practice
+                    </span>
+
+                    <h2 class="font-serif text-4xl sm:text-5xl lg:text-6xl text-ink leading-[1.05] uppercase mb-8">
+                        Therapy should feel<br>
+                        <span class="italic font-serif normal-case text-copper font-normal">honest enough</span><br>
+                        to be useful.
+                    </h2>
+
+                    <div class="space-y-6 text-base sm:text-lg text-ink/80 leading-relaxed max-w-2xl mb-12 font-normal">
+                        <p>
+                            Shera Baker-Edwards, LICSW brings an experienced, direct, empathetic perspective to psychotherapy.
+                        </p>
+                        <p>
+            <!-- 6 Editorial Service Grid Cards -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-10">
+                
+                <!-- SERVICE 01 -->
+                <div class="group flex flex-col bg-mist/40 border border-ink/10 p-5 reveal">
+                    <div 
+                        class="img-zoom-box aspect-[16/11] bg-mist mb-6 border border-ink/5 relative cursor-pointer group/img"
+                        onclick="document.getElementById('anxiety-img-input').click()"
+                        title="Click to add or change picture"
+                    >
+                        <img 
+                            id="anxiety-img"
+                            src="https://images.unsplash.com/photo-1506784983877-45594efa4cbe?q=80&w=800&auto=format&fit=crop" 
+                            alt="Anxiety and stress support imagery - reflective city environment" 
+                            class="w-full h-full object-cover"
+                            loading="lazy"
+                            onerror="handleImgError(this)"
+                        >
+                        <div class="absolute top-3 right-3 bg-ink/85 backdrop-blur-sm text-ivory hover:bg-copper text-[10px] font-medium tracking-wider uppercase px-3 py-1.5 rounded flex items-center gap-1.5 border border-ivory/20 transition-all shadow-md group-hover/img:scale-105">
+                            <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 9a2 2 0 012-2h.93a2 2 0 001.664-.89l.812-1.22A2 2 0 0110.07 4h3.86a2 2 0 011.664.89l.812 1.22A2 2 0 0018.07 7H19a2 2 0 012 2v9a2 2 0 01-2 2H5a2 2 0 01-2-2V9z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 13a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
+                            <span>Add/Change Picture</span>
+                        </div>
+                        <input type="file" id="anxiety-img-input" accept="image/*" class="hidden" onchange="handleImageUpload(event, 'anxiety-img')">
+                    </div>
+                    <div class="flex items-baseline justify-between mb-2">
+                        <span class="font-serif text-lg text-copper">01</span>
+                        <span class="text-[10px] tracking-[0.2em] uppercase text-ink/40">Adult Care</span>
+                    </div>
+                    <h3 class="font-serif text-2xl text-ink uppercase mb-3 group-hover:text-copper transition-colors">
+                        Anxiety + Stress
+                    </h3>
+                    <p class="text-sm text-ink/75 leading-relaxed">
+                        Work through anxious thoughts, stress responses, and patterns that make everyday life feel harder to manage.
+                    </p>
+                </div>
+
+                <!-- SERVICE 02 -->
+                <div class="group flex flex-col bg-mist/40 border border-ink/10 p-5 reveal delay-1">
+                    <div 
+                        class="img-zoom-box aspect-[16/11] bg-mist mb-6 border border-ink/5 relative cursor-pointer group/img"
+                        onclick="document.getElementById('depression-img-input').click()"
+                        title="Click to add or change picture"
+                    >
+                        <img 
+                            id="depression-img"
+                            src="https://images.unsplash.com/photo-1499209974431-9dac3ada00d7?q=80&w=800&auto=format&fit=crop" 
+                            alt="Depression and mood support imagery - quiet contemplation in natural light" 
+                            class="w-full h-full object-cover"
+                            loading="lazy"
+                            onerror="handleImgError(this)"
+                        >
+                        <div class="absolute bottom-3 left-3 bg-ink/85 backdrop-blur-sm text-ivory text-[9px] font-semibold tracking-[0.2em] uppercase px-3 py-1.5 border border-ivory/10">
+                            Quiet Contemplation &amp; Recovery
+                        </div>
+
+                        <!-- Click to add a picture button overlay -->
+                        <div class="absolute top-3 right-3 bg-ink/85 backdrop-blur-sm text-ivory hover:bg-copper text-[10px] font-medium tracking-wider uppercase px-3 py-1.5 rounded flex items-center gap-1.5 border border-ivory/20 transition-all shadow-md group-hover/img:scale-105">
+                            <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 9a2 2 0 012-2h.93a2 2 0 001.664-.89l.812-1.22A2 2 0 0110.07 4h3.86a2 2 0 011.664.89l.812 1.22A2 2 0 0018.07 7H19a2 2 0 012 2v9a2 2 0 01-2 2H5a2 2 0 01-2-2V9z"></path>
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 13a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                            </svg>
+                            <span>Add/Change Picture</span>
+                        </div>
+
+                        <!-- Hidden File Input -->
+                        <input 
+                            type="file" 
+                            id="depression-img-input" 
+                            accept="image/*" 
+                            class="hidden" 
+                            onchange="handleImageUpload(event, 'depression-img')"
+                        >
+                    </div>
+                    <div class="flex items-baseline justify-between mb-2">
+                        <span class="font-serif text-lg text-copper">02</span>
+                        <span class="text-[10px] tracking-[0.2em] uppercase text-ink/40">Emotional Health</span>
+                    </div>
+                    <h3 class="font-serif text-2xl text-ink uppercase mb-3 group-hover:text-copper transition-colors">
+                        Depression + Mood
+                    </h3>
+                    <p class="text-sm text-ink/75 leading-relaxed">
+                        Develop greater understanding of emotional patterns while working toward healthier ways of coping, mood stabilization, and inner clarity.
+                    </p>
+                </div>
+
+                <!-- SERVICE 03 -->
+                <div class="group flex flex-col bg-mist/40 border border-ink/10 p-5 reveal delay-2">
+                    <div 
+                        class="img-zoom-box aspect-[16/11] bg-mist mb-6 border border-ink/5 relative cursor-pointer group/img"
+                        onclick="document.getElementById('grief-img-input').click()"
+                        title="Click to add or change picture"
+                    >
+                        <img 
+                            id="grief-img"
+                            src="https://images.unsplash.com/photo-1518495973542-4542c06a5843?q=80&w=800&auto=format&fit=crop" 
+                            alt="Grief and loss support imagery - serene outdoor reflection" 
+                            class="w-full h-full object-cover"
+                            loading="lazy"
+                            onerror="handleImgError(this)"
+                        >
+                        <div class="absolute top-3 right-3 bg-ink/85 backdrop-blur-sm text-ivory hover:bg-copper text-[10px] font-medium tracking-wider uppercase px-3 py-1.5 rounded flex items-center gap-1.5 border border-ivory/20 transition-all shadow-md group-hover/img:scale-105">
+                            <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 9a2 2 0 012-2h.93a2 2 0 001.664-.89l.812-1.22A2 2 0 0110.07 4h3.86a2 2 0 011.664.89l.812 1.22A2 2 0 0018.07 7H19a2 2 0 012 2v9a2 2 0 01-2 2H5a2 2 0 01-2-2V9z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 13a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
+                            <span>Add/Change Picture</span>
+                        </div>
+                        <input type="file" id="grief-img-input" accept="image/*" class="hidden" onchange="handleImageUpload(event, 'grief-img')">
+                    </div>
+                    <div class="flex items-baseline justify-between mb-2">
+                        <span class="font-serif text-lg text-copper">03</span>
+                        <span class="text-[10px] tracking-[0.2em] uppercase text-ink/40">Grief Work</span>
+                    </div>
+                    <h3 class="font-serif text-2xl text-ink uppercase mb-3 group-hover:text-copper transition-colors">
+                        Grief + Loss
+                    </h3>
+                    <p class="text-sm text-ink/75 leading-relaxed">
+                        Process loss, change, and the complex emotions that can accompany major life experiences.
+                    </p>
+                </div>
+
+                <!-- SERVICE 04 -->
+                <div class="group flex flex-col bg-mist/40 border border-ink/10 p-5 reveal">
+                    <div 
+                        class="img-zoom-box aspect-[16/11] bg-mist mb-6 border border-ink/5 relative cursor-pointer group/img"
+                        onclick="document.getElementById('transitions-img-input').click()"
+                        title="Click to add or change picture"
+                    >
+                        <img 
+                            id="transitions-img"
+                            src="https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?q=80&w=800&auto=format&fit=crop" 
+                            alt="Life transitions imagery - open path through landscape" 
+                            class="w-full h-full object-cover"
+                            loading="lazy"
+                            onerror="handleImgError(this)"
+                        >
+                        <div class="absolute top-3 right-3 bg-ink/85 backdrop-blur-sm text-ivory hover:bg-copper text-[10px] font-medium tracking-wider uppercase px-3 py-1.5 rounded flex items-center gap-1.5 border border-ivory/20 transition-all shadow-md group-hover/img:scale-105">
+                            <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 9a2 2 0 012-2h.93a2 2 0 001.664-.89l.812-1.22A2 2 0 0110.07 4h3.86a2 2 0 011.664.89l.812 1.22A2 2 0 0018.07 7H19a2 2 0 012 2v9a2 2 0 01-2 2H5a2 2 0 01-2-2V9z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 13a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
+                            <span>Add/Change Picture</span>
+                        </div>
+                        <input type="file" id="transitions-img-input" accept="image/*" class="hidden" onchange="handleImageUpload(event, 'transitions-img')">
+                    </div>
+                    <div class="flex items-baseline justify-between mb-2">
+                        <span class="font-serif text-lg text-copper">04</span>
+                        <span class="text-[10px] tracking-[0.2em] uppercase text-ink/40">Life Shifts</span>
+                    </div>
+                    <h3 class="font-serif text-2xl text-ink uppercase mb-3 group-hover:text-copper transition-colors">
+                        Life Transitions
+                    </h3>
+                    <p class="text-sm text-ink/75 leading-relaxed">
+                        Navigate changes in relationships, identity, career, family, or other moments when familiar ground shifts.
+                    </p>
+                </div>
+
+                <!-- SERVICE 05 -->
+                <div class="group flex flex-col bg-mist/40 border border-ink/10 p-5 reveal delay-1">
+                    <div 
+                        class="img-zoom-box aspect-[16/11] bg-mist mb-6 border border-ink/5 relative cursor-pointer group/img"
+                        onclick="document.getElementById('esteem-img-input').click()"
+                        title="Click to add or change picture"
+                    >
+                        <img 
+                            id="esteem-img"
+                            src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=800&auto=format&fit=crop" 
+                            alt="Self esteem and coping imagery - grounded portrait" 
+                            class="w-full h-full object-cover"
+                            loading="lazy"
+                            onerror="handleImgError(this)"
+                        >
+                        <div class="absolute top-3 right-3 bg-ink/85 backdrop-blur-sm text-ivory hover:bg-copper text-[10px] font-medium tracking-wider uppercase px-3 py-1.5 rounded flex items-center gap-1.5 border border-ivory/20 transition-all shadow-md group-hover/img:scale-105">
+                            <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 9a2 2 0 012-2h.93a2 2 0 001.664-.89l.812-1.22A2 2 0 0110.07 4h3.86a2 2 0 011.664.89l.812 1.22A2 2 0 0018.07 7H19a2 2 0 012 2v9a2 2 0 01-2 2H5a2 2 0 01-2-2V9z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 13a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
+                            <span>Add/Change Picture</span>
+                        </div>
+                        <input type="file" id="esteem-img-input" accept="image/*" class="hidden" onchange="handleImageUpload(event, 'esteem-img')">
+                    </div>
+                    <div class="flex items-baseline justify-between mb-2">
+                        <span class="font-serif text-lg text-copper">05</span>
+                        <span class="text-[10px] tracking-[0.2em] uppercase text-ink/40">Personal Growth</span>
+                    </div>
+                    <h3 class="font-serif text-2xl text-ink uppercase mb-3 group-hover:text-copper transition-colors">
+                        Self-Esteem + Coping
+                    </h3>
+                    <p class="text-sm text-ink/75 leading-relaxed">
+                        Explore self-defeating patterns, build healthier thinking, and develop practical coping strategies.
+                    </p>
+                </div>
+
+                <!-- SERVICE 06 -->
+                <div class="group flex flex-col bg-mist/40 border border-ink/10 p-5 reveal delay-2">
+                    <div 
+                        class="img-zoom-box aspect-[16/11] bg-mist mb-6 border border-ink/5 relative cursor-pointer group/img"
+                        onclick="document.getElementById('relationships-img-input').click()"
+                        title="Click to add or change picture"
+                    >
+                        <img 
+                            id="relationships-img"
+                            src="https://images.unsplash.com/photo-1529156069898-49953e39b3ac?q=80&w=800&auto=format&fit=crop" 
+                            alt="Relationships and connection imagery - natural conversation" 
+                            class="w-full h-full object-cover"
+                            loading="lazy"
+                            onerror="handleImgError(this)"
+                        >
+                        <div class="absolute top-3 right-3 bg-ink/85 backdrop-blur-sm text-ivory hover:bg-copper text-[10px] font-medium tracking-wider uppercase px-3 py-1.5 rounded flex items-center gap-1.5 border border-ivory/20 transition-all shadow-md group-hover/img:scale-105">
+                            <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 9a2 2 0 012-2h.93a2 2 0 001.664-.89l.812-1.22A2 2 0 0110.07 4h3.86a2 2 0 011.664.89l.812 1.22A2 2 0 0018.07 7H19a2 2 0 012 2v9a2 2 0 01-2 2H5a2 2 0 01-2-2V9z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 13a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
+                            <span>Add/Change Picture</span>
+                        </div>
+                        <input type="file" id="relationships-img-input" accept="image/*" class="hidden" onchange="handleImageUpload(event, 'relationships-img')">
+                    </div>
+                    <div class="flex items-baseline justify-between mb-2">
+                        <span class="font-serif text-lg text-copper">06</span>
+                        <span class="text-[10px] tracking-[0.2em] uppercase text-ink/40">Connection</span>
+                    </div>
+                    <h3 class="font-serif text-2xl text-ink uppercase mb-3 group-hover:text-copper transition-colors">
+                        Relationships + Growth
+                    </h3>
+                    <p class="text-sm text-ink/75 leading-relaxed">
+                        Understand patterns of connection, boundaries, communication, and the ways relationships shape us.
+                    </p>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+
+    <!-- 5. THERAPEUTIC APPROACH -->
+    <section id="approach" class="py-24 md:py-32 px-6 md:px-12 bg-ivory border-b border-ink/10">
+        <div class="max-w-7xl mx-auto">
+            
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
+                
+                <!-- Left Title Block -->
+                <div class="lg:col-span-5 reveal">
+                    <span class="text-[11px] font-semibold tracking-[0.25em] uppercase text-copper block mb-4">
+                        Clinical Methodology
+                    </span>
+                    <h2 class="font-serif text-4xl sm:text-5xl lg:text-6xl text-ink uppercase leading-[1.02] mb-8">
+                        No formula.<br>
+                        No performance.<br>
+                        <span class="italic font-serif normal-case text-copper font-normal">Just real work.</span>
+                    </h2>
+
+                    <p class="text-base sm:text-lg text-ink/80 leading-relaxed mb-8">
+                        Therapy isn't about fitting yourself into a predetermined process. It's about understanding what is happening, identifying what needs to change, and working toward that change together.
+                    </p>
+
+                    <div class="p-6 bg-mist border-l-2 border-copper">
+                        <p class="text-sm font-medium text-ink italic">
+                            "Different people need different tools. The work begins with understanding what you need."
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Right Oversized Typographic Composition -->
+                <div class="lg:col-span-7 reveal delay-1">
+                    <div class="border-t border-ink/20 divide-y divide-ink/15">
+                        
+                        <div class="py-6 flex flex-col sm:flex-row sm:items-center justify-between gap-2 group">
+                            <span class="font-serif text-2xl sm:text-3xl text-ink uppercase tracking-wide group-hover:text-copper transition-colors">
+                                Cognitive Behavioral Therapy (CBT)
+                            </span>
+                            <span class="text-[10px] tracking-[0.2em] uppercase text-ink/50">Evidence-Informed</span>
+                        </div>
+
+                        <div class="py-6 flex flex-col sm:flex-row sm:items-center justify-between gap-2 group">
+                            <span class="font-serif text-2xl sm:text-3xl text-ink uppercase tracking-wide group-hover:text-copper transition-colors">
+                                Motivational Interviewing
+                            </span>
+                            <span class="text-[10px] tracking-[0.2em] uppercase text-ink/50">Change-Focused</span>
+                        </div>
+
+                        <div class="py-6 flex flex-col sm:flex-row sm:items-center justify-between gap-2 group">
+                            <span class="font-serif text-2xl sm:text-3xl text-ink uppercase tracking-wide group-hover:text-copper transition-colors">
+                                Solution-Focused Therapy
+                            </span>
+                            <span class="text-[10px] tracking-[0.2em] uppercase text-ink/50">Action-Oriented</span>
+                        </div>
+
+                        <div class="py-6 flex flex-col sm:flex-row sm:items-center justify-between gap-2 group">
+                            <span class="font-serif text-2xl sm:text-3xl text-ink uppercase tracking-wide group-hover:text-copper transition-colors">
+                                Person-Centered Therapy
+                            </span>
+                            <span class="text-[10px] tracking-[0.2em] uppercase text-ink/50">Humanistic</span>
+                        </div>
+
+                        <div class="py-6 flex flex-col sm:flex-row sm:items-center justify-between gap-2 group">
+                            <span class="font-serif text-2xl sm:text-3xl text-ink uppercase tracking-wide group-hover:text-copper transition-colors">
+                                Psychodynamic Therapy
+                            </span>
+                            <span class="text-[10px] tracking-[0.2em] uppercase text-ink/50">Insight-Based</span>
+                        </div>
+
+                        <div class="py-6 flex flex-col sm:flex-row sm:items-center justify-between gap-2 group">
+                            <span class="font-serif text-2xl sm:text-3xl text-ink uppercase tracking-wide group-hover:text-copper transition-colors">
+                                Strength-Based Work
+                            </span>
+                            <span class="text-[10px] tracking-[0.2em] uppercase text-ink/50">Resilience</span>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+
+    <!-- 6. TESTIMONIAL / TRUST -->
+    <section class="py-24 md:py-32 px-6 md:px-12 bg-ivory border-b border-ink/10">
+        <div class="max-w-5xl mx-auto text-center reveal">
+            
+            <span class="text-[11px] font-semibold tracking-[0.25em] uppercase text-copper block mb-8">
+                Trust Matters
+            </span>
+
+            <!-- Oversized Graphic Quote Mark -->
+            <div class="font-serif text-7xl sm:text-9xl text-copper/30 leading-none select-none -mb-12">“</div>
+
+            <blockquote class="font-serif text-2xl sm:text-3xl md:text-4xl text-ink leading-tight max-w-4xl mx-auto mb-8 font-normal italic">
+                "Placeholder testimonial — replace with a verified client testimonial provided with appropriate permission."
+            </blockquote>
+
+            <p class="text-[10px] tracking-[0.25em] uppercase text-ink/50">
+                Verified Client Experience • Confidential Process
+            </p>
+
+        </div>
+    </section>
+
+
+    <!-- 7. CONTACT / FINAL CTA -->
+    <section id="contact" class="py-24 md:py-32 px-6 md:px-12 bg-ink text-ivory relative overflow-hidden">
+        
+        <div class="max-w-7xl mx-auto">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16">
+                
+                <!-- Left: Contact Info & Statement -->
+                <div class="lg:col-span-6 reveal">
+                    <span class="text-[11px] font-semibold tracking-[0.25em] uppercase text-copper block mb-6">
+                        Get Started
+                    </span>
+
+                    <h2 class="font-serif text-4xl sm:text-5xl lg:text-6xl text-ivory uppercase leading-[1.05] mb-8">
+                        You don't have to<br>
+                        have it figured out<br>
+                        <span class="italic font-serif normal-case text-copper font-normal">before you begin.</span>
+                    </h2>
+
+                    <p class="text-base sm:text-lg text-ivory/80 leading-relaxed max-w-md mb-12">
+                        If you're considering therapy, the first step can simply be a conversation.
+                    </p>
+
+                    <!-- Direct Info Cards -->
+                    <div class="space-y-6 border-t border-ivory/15 pt-8">
+                        <div>
+                            <span class="text-[10px] tracking-[0.2em] uppercase text-copper block mb-1">Practice</span>
+                            <p class="font-serif text-2xl text-ivory">Shera Baker-Edwards, LICSW</p>
+                            <p class="text-xs text-ivory/60 uppercase tracking-widest mt-0.5">S Dot Baker LICSW, LLC</p>
+                        </div>
+
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 pt-2">
+                            <div>
+                                <span class="text-[10px] tracking-[0.2em] uppercase text-copper block mb-1">Direct Phone</span>
+                                <a href="tel:+14016497523" class="text-lg text-ivory hover:text-copper transition-colors">
+                                    (401) 649-7523
+                                </a>
+                            </div>
+
+                            <div>
+                                <span class="text-[10px] tracking-[0.2em] uppercase text-copper block mb-1">Email</span>
+                                <a href="mailto:SdotBakerLICSW@gmail.com" class="text-lg text-ivory hover:text-copper transition-colors break-all">
+                                    SdotBakerLICSW@gmail.com
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right: Minimal Contact Form -->
+                <div class="lg:col-span-6 bg-ivory/5 p-8 md:p-12 border border-ivory/10 reveal delay-1">
+                    <form onsubmit="event.preventDefault();" class="space-y-8">
+                        <div>
+                            <label for="name" class="block text-[10px] tracking-[0.2em] uppercase text-ivory/70 mb-2">Full Name</label>
+                            <input 
+                                type="text" 
+                                id="name" 
+                                placeholder="Your name" 
+                                required 
+                                class="w-full bg-transparent border-b border-ivory/30 py-3 text-ivory placeholder-ivory/30 focus:border-copper focus:outline-none transition-colors text-sm"
+                            >
+                        </div>
+
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-8">
+                            <div>
+                                <label for="email" class="block text-[10px] tracking-[0.2em] uppercase text-ivory/70 mb-2">Email Address</label>
+                                <input 
+                                    type="email" 
+                                    id="email" 
+                                    placeholder="your@email.com" 
+                                    required 
+                                    class="w-full bg-transparent border-b border-ivory/30 py-3 text-ivory placeholder-ivory/30 focus:border-copper focus:outline-none transition-colors text-sm"
+                                >
+                            </div>
+
+                            <div>
+                                <label for="phone" class="block text-[10px] tracking-[0.2em] uppercase text-ivory/70 mb-2">Phone Number</label>
+                                <input 
+                                    type="tel" 
+                                    id="phone" 
+                                    placeholder="(401) 000-0000" 
+                                    class="w-full bg-transparent border-b border-ivory/30 py-3 text-ivory placeholder-ivory/30 focus:border-copper focus:outline-none transition-colors text-sm"
+                                >
+                            </div>
+                        </div>
+
+                        <div>
+                            <label for="message" class="block text-[10px] tracking-[0.2em] uppercase text-ivory/70 mb-2">Message</label>
+                            <textarea 
+                                id="message" 
+                                rows="4" 
+                                placeholder="How can Shera support you?" 
+                                required 
+                                class="w-full bg-transparent border-b border-ivory/30 py-3 text-ivory placeholder-ivory/30 focus:border-copper focus:outline-none transition-colors text-sm resize-none"
+                            ></textarea>
+                        </div>
+
+                        <p class="text-[11px] text-ivory/50 italic">
+                            Please do not include sensitive or confidential medical information in this form.
+                        </p>
+
+                        <button 
+                            type="submit" 
+                            class="w-full bg-copper text-white py-4 text-xs font-semibold tracking-[0.2em] uppercase hover:bg-ivory hover:text-ink transition-colors duration-300"
+                        >
+                            Send Message →
+                        </button>
+                    </form>
+                </div>
+
+            </div>
+        </div>
+
+    </section>
+
+
+    <!-- 8. FOOTER -->
+    <footer class="bg-ink text-ivory/70 py-16 px-6 md:px-12 border-t border-ivory/10 text-xs">
+        <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-12 gap-12 pb-12 border-b border-ivory/10">
+            
+            <div class="md:col-span-5">
+                <p class="font-serif text-xl text-ivory uppercase tracking-wide mb-1">S DOT BAKER LICSW, LLC</p>
+                <p class="text-xs text-copper uppercase tracking-widest font-semibold mb-4">Shera Baker-Edwards, LICSW</p>
+                <p class="text-ivory/60 leading-relaxed max-w-sm">
+                    Psychotherapy for adults navigating anxiety, depression, grief, life transitions, and personal growth in Providence, Rhode Island.
+                </p>
+            </div>
+
+            <div class="md:col-span-3 flex flex-col space-y-3 font-semibold tracking-wider uppercase text-[11px]">
+                <a href="#about" class="hover:text-copper transition-colors">About</a>
+                <a href="#support" class="hover:text-copper transition-colors">Support</a>
+                <a href="#approach" class="hover:text-copper transition-colors">Approach</a>
+                <a href="#contact" class="hover:text-copper transition-colors">Contact</a>
+            </div>
+
+            <div class="md:col-span-4 space-y-2">
+                <p class="text-[10px] tracking-[0.2em] uppercase text-copper block mb-2">Practice Information</p>
+                <p class="text-ivory">Providence, Rhode Island</p>
+                <p><a href="tel:+14016497523" class="hover:text-copper transition-colors">(401) 649-7523</a></p>
+                <p><a href="mailto:SdotBakerLICSW@gmail.com" class="hover:text-copper transition-colors">SdotBakerLICSW@gmail.com</a></p>
+            </div>
+
+        </div>
+
+        <div class="max-w-7xl mx-auto pt-8 flex flex-col sm:flex-row justify-between items-start sm:items-center text-[10px] tracking-wider text-ivory/40 gap-4">
+            <p>© 2026 S dot Baker LICSW, LLC. All Rights Reserved.</p>
+            <div class="flex gap-6">
+                <a href="#" class="hover:text-ivory transition-colors">Privacy Policy</a>
+                <a href="#" class="hover:text-ivory transition-colors">Notice of Privacy Practices</a>
+            </div>
+        </div>
+    </footer>
+
+
+    <!-- JAVASCRIPT LOGIC -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            
+            // 1. Sticky Navbar scroll handler
+            const navbar = document.getElementById('navbar');
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 40) {
+                    navbar.classList.add('scrolled');
+                } else {
+                    navbar.classList.remove('scrolled');
+                }
+            });
+
+            // 2. Mobile Menu Toggle
+            const menuBtn = document.getElementById('menu-btn');
+            const closeBtn = document.getElementById('close-btn');
+            const mobileMenu = document.getElementById('mobile-menu');
+            const mobileLinks = document.querySelectorAll('.mobile-link');
+
+            function toggleMobileMenu() {
+                mobileMenu.classList.toggle('open');
+                document.body.style.overflow = mobileMenu.classList.contains('open') ? 'hidden' : '';
+            }
+
+            if (menuBtn && closeBtn && mobileMenu) {
+                menuBtn.addEventListener('click', toggleMobileMenu);
+                closeBtn.addEventListener('click', toggleMobileMenu);
+                mobileLinks.forEach(link => link.addEventListener('click', toggleMobileMenu));
+            }
+
+            // 3. Scroll Reveal Observer
+            const revealElements = document.querySelectorAll('.reveal');
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: "0px 0px -40px 0px"
+            };
+
+            const revealObserver = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('active');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, observerOptions);
+
+            revealElements.forEach(el => revealObserver.observe(el));
+
+            // 4. Toast Notification Manager
+            function showToast(message) {
+                const toastContainer = document.getElementById('toast-container');
+                const toastMessage = document.getElementById('toast-message');
+                if (toastContainer && toastMessage) {
+                    toastMessage.innerText = message;
+                    toastContainer.classList.remove('translate-y-20', 'opacity-0', 'pointer-events-none');
+                    toastContainer.classList.add('translate-y-0', 'opacity-100');
+                    
+                    setTimeout(() => {
+                        toastContainer.classList.remove('translate-y-0', 'opacity-100');
+                        toastContainer.classList.add('translate-y-20', 'opacity-0', 'pointer-events-none');
+                    }, 3500);
+                }
+            }
+
+            // 5. Restore saved images from localStorage on page load
+            const storedImageIds = [
+                'hero-img', 
+                'about-img', 
+                'about-img-2',
+                'anxiety-img', 
+                'depression-img', 
+                'grief-img', 
+                'transitions-img', 
+                'esteem-img', 
+                'relationships-img'
+            ];
+
+            storedImageIds.forEach(id => {
+                const savedDataUrl = localStorage.getItem('sdotbaker_img_' + id);
+                if (savedDataUrl) {
+                    const imgElem = document.getElementById(id);
+                    if (imgElem) {
+                        imgElem.src = savedDataUrl;
+                    }
+                }
+            });
+
+            // 6. Image Upload & LocalStorage Persistence Handler
+            window.handleImageUpload = function(event, imgId) {
+                const file = event.target.files[0];
+                if (file) {
+                    const reader = new FileReader();
+                    reader.onload = function(e) {
+                        const targetImg = document.getElementById(imgId);
+                        if (targetImg) {
+                            const dataUrl = e.target.result;
+                            targetImg.src = dataUrl;
+                            
+                            // Save image persistently to browser storage
+                            try {
+                                localStorage.setItem('sdotbaker_img_' + imgId, dataUrl);
+                                showToast("Image Saved to Local Storage!");
+                            } catch (err) {
+                                console.warn("Storage quota exceeded or error saving image: ", err);
+                                showToast("Image Updated (Storage limit exceeded)");
+                            }
+                        }
+                    };
+                    reader.readAsDataURL(file);
+                }
+            };
+        });
+    </script>
+</body>
+</html>
